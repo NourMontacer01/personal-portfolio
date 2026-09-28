@@ -4,6 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Nour Montacer — Mobile Developer</title>
+  <link id="favicon" rel="icon" type="image/png" href="">
+  <script>
+    (function(){
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      const link = document.getElementById('favicon') || (()=>{
+        const l = document.createElement('link');
+        l.id='favicon'; l.rel='icon'; l.type='image/png';
+        document.head.appendChild(l); return l;
+      })();
+      let t = 0;
+      function hsl(h,s,l){ return `hsl(${h},${s}%,${l}%)` }
+      function draw(){
+        ctx.clearRect(0,0,64,64);
+        // Spinning conic gradient background
+        const h1 = (t*1.2) % 360;
+        const h2 = (t*1.2 + 140) % 360;
+        const h3 = (t*1.2 + 260) % 360;
+        const grd = ctx.createConicGradient(t * Math.PI / 180, 32, 32);
+        grd.addColorStop(0,    hsl(h1, 90, 60));
+        grd.addColorStop(0.33, hsl(h2, 90, 60));
+        grd.addColorStop(0.66, hsl(h3, 90, 60));
+        grd.addColorStop(1,    hsl(h1, 90, 60));
+        // Rounded rect background
+        ctx.beginPath();
+        ctx.roundRect(0,0,64,64,14);
+        ctx.fillStyle = grd;
+        ctx.fill();
+        // Dark inner circle
+        ctx.beginPath();
+        ctx.arc(32,32,22,0,Math.PI*2);
+        ctx.fillStyle = 'rgba(5,10,20,0.75)';
+        ctx.fill();
+        // "NM" text
+        ctx.font = 'bold 22px system-ui,sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#fff';
+        ctx.fillText('NM', 32, 33);
+        link.href = canvas.toDataURL('image/png');
+        t += 1.5;
+        requestAnimationFrame(draw);
+      }
+      // Start after DOM is ready
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', draw);
+      } else { draw(); }
+    })();
+  </script>
   <meta name="description" content="Portfolio of Nour Montacer, Mobile Developer & MSc Data+AI student at ECE Paris.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
