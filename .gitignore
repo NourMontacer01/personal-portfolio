@@ -1,2 +1,14 @@
 .DS_Store
 *.DS_Store
+
+# Raw originals — only clean renamed copies are tracked
+assets/EasyDoc/Screenshot*
+assets/msp-screenshots/Mobile Layout/IMG_*
+assets/msp-screenshots/Tablet Layout/Simulator*
+assets/msp-screenshots/Mobile Layout/msp_m_1.png
+assets/msp-screenshots/Mobile Layout/msp_m_11.png
+assets/msp-screenshots/Tablet Layout/msp_t_2.png
+assets/msp-screenshots/Tablet Layout/msp_t_3.png
+assets/msp-screenshots/Tablet Layout/msp_t_4.png
+assets/msp-screenshots/Tablet Layout/msp_t_5.png
+assets/nutrisnap/Simulator*
