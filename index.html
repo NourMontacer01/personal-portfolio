@@ -213,6 +213,8 @@
     .web-mockup img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
     .web-mockup.back { width:62%; height:62%; left:7%; top:12%; transform:perspective(700px) rotateY(10deg); opacity:.85; }
     .web-mockup.front { width:44%; height:82%; right:8%; top:8%; z-index:1; transform:perspective(700px) rotateY(-6deg); }
+    .web-mockup.wide.back { width:64%; height:58%; left:5%; top:10%; }
+    .web-mockup.wide.front { width:64%; height:58%; left:31%; right:auto; top:30%; }
     .project-body { padding:22px 24px; }
     .project-type { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--p2); margin-bottom:6px; }
     .project-title { font-size:1.2rem; font-weight:800; margin-bottom:10px; }
@@ -442,7 +444,7 @@
       </div>
       <div class="hero-stats" id="hero-stats">
         <div class="stat">
-          <div class="stat-num" data-target="6">0</div>
+          <div class="stat-num" data-target="7">0</div>
           <div class="stat-label">Projects Shipped</div>
         </div>
         <div class="stat">
@@ -732,10 +734,12 @@
             </div>
             <div class="timeline-date">Jun 2023 → Sept 2023</div>
           </div>
-          <div class="timeline-desc">Web development on FindJobs, a job-search platform.</div>
+          <div class="timeline-desc">Web development on FindJobs, a job-search platform connecting recruiters and applicants: job board, job posting, interview booking, React front-end and Node.js / PostgreSQL API.</div>
           <div class="timeline-tags">
-            <span class="tag">Web</span>
-            <span class="tag">FindJobs</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">PostgreSQL</span>
           </div>
         </div>
       </div>
@@ -777,6 +781,7 @@
     <div class="projects-filter" data-aos="fade-up">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="web">Web</button>
       <button class="filter-btn" data-filter="ios">iOS</button>
       <button class="filter-btn" data-filter="flutter">Flutter</button>
       <button class="filter-btn" data-filter="enterprise">Enterprise</button>
@@ -806,6 +811,33 @@
           <div class="project-footer">
             <a href="https://github.com/NourMontacer01/Retrieval-Augmented-Generation-ai-law-assistant" target="_blank" rel="noopener" class="btn-repo" onclick="event.stopPropagation()">⌥ GitHub</a>
             <button class="btn-details" onclick="event.stopPropagation();openPM('rag')">Details →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FindJobs -->
+      <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="80" onclick="openPM('findjobs')">
+        <div class="project-screenshots" style="background:linear-gradient(135deg,#10163d,#2a1a5e)">
+          <div class="web-mockup wide back">
+            <img src="assets/findjobs/findjobs_2_jobboard.png" alt="FindJobs job board">
+          </div>
+          <div class="web-mockup wide front">
+            <img src="assets/findjobs/findjobs_1_home.png" alt="FindJobs home page">
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-type">Web · Full-Stack · Recruitment</div>
+          <div class="project-title">FindJobs</div>
+          <p class="project-desc">Job-search platform connecting recruiters and applicants: job board, job posting, interview booking with a calendar, recruiter / applicant accounts and multi-language UI.</p>
+          <div class="project-stack">
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">PostgreSQL</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/saber-mekki/jobHiring-Back" target="_blank" rel="noopener" class="btn-repo" onclick="event.stopPropagation()">⌥ GitHub</a>
+            <button class="btn-details" onclick="event.stopPropagation();openPM('findjobs')">Details →</button>
           </div>
         </div>
       </div>
@@ -1193,6 +1225,32 @@ const PROJ = {
     link: 'https://github.com/NourMontacer01/Retrieval-Augmented-Generation-ai-law-assistant',
     demo: 'https://nourmonta01-recueil-de-conformite.static.hf.space',
   },
+  findjobs: {
+    type: 'Web · Full-Stack · Recruitment Platform',
+    title: 'FindJobs',
+    role: '💼 Web Development Intern · Leader Solution Tactile (AURES group) · 2023',
+    desc: 'A job-search platform for remote and on-site work that connects recruiters and applicants. Recruiters publish offers; applicants browse the job board, book interviews through a built-in calendar and manage their account. The interface is available in several languages.',
+    contribs: [
+      'Built the React front-end: home page, job board, job posting form, interview booking with calendar, blog and contact pages',
+      'Implemented sign-in / sign-up modals with separate recruiter and applicant roles',
+      'Developed the REST API in Node.js / Express with TypeScript, documented with Swagger',
+      'Modelled the PostgreSQL database for users, job offers and interview bookings',
+      'Secured passwords with bcrypt hashing',
+      'Added multi-language support with i18next (English, French and more)',
+      'Job board with pagination fed by the API',
+    ],
+    tech: ['React','JavaScript','Node.js','Express','TypeScript','PostgreSQL','Swagger','bcrypt','i18next','Reactstrap'],
+    imgs: [
+      'assets/findjobs/findjobs_1_home.png',
+      'assets/findjobs/findjobs_2_jobboard.png',
+      'assets/findjobs/findjobs_3_offer.png',
+      'assets/findjobs/findjobs_4_fields.png',
+      'assets/findjobs/findjobs_5_mobile.png',
+      'assets/findjobs/findjobs_6_signup.png',
+      'assets/findjobs/findjobs_7_blog.png',
+    ],
+    link: 'https://github.com/saber-mekki/jobHiring-Back',
+  },
   qualipro: {
     type: 'iOS · Android · iPad · Enterprise',
     title: 'Qualipro Mobile App',
@@ -1480,6 +1538,9 @@ function openPM(key){
     actions.innerHTML=`<span class="confidential-badge" style="color:var(--p2);border-color:rgba(0,217,255,.2)">⚠️ Update GitHub URL in the HTML config</span>`;
   } else {
     actions.innerHTML=`<a href="${p.link}" target="_blank" rel="noopener" class="btn-repo">⌥ View on GitHub</a>`;
+  }
+  if(p.backend){
+    actions.innerHTML+=`<a href="${p.backend}" target="_blank" rel="noopener" class="btn-repo">⌥ Backend repo</a>`;
   }
   if(p.demo){
     actions.innerHTML+=`<a href="${p.demo}" target="_blank" rel="noopener" class="btn-repo">🌐 Try it online</a>`;
